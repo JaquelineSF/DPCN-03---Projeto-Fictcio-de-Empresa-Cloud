@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #1d3557;
+    background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
@@ -145,5 +145,110 @@ nav {
     .menu li {
         margin: 10px 0;
         text-align: center;
+    }
+}
+/* Efeito de brilho neon no logo */
+.logo-glow {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animação de brilho pulsante */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 25px #00ffcc;
+    }
+    to {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc, 0 0 60px #00ffcc;
+    }
+}
+/* Estilos globais para imagens */
+img {
+    max-width: 100%;       /* Garante que a imagem nunca ultrapasse o tamanho do container */
+    height: auto;          /* Mantém a proporção da imagem */
+    display: block;        /* Remove o espaço abaixo da imagem gerado pelo inline-block */
+    margin: 0 auto;        /* Centraliza a imagem */
+}
+
+/* Estilos específicos para imagens dentro de um container */
+.responsive-img {
+    width: 50%;            /* Define a largura máxima da imagem, ajuste conforme necessário */
+    max-width: 500px;      /* Define um limite de largura */
+    margin: 0 auto;        /* Centraliza a imagem */
+    display: block;        /* Centraliza a imagem dentro do container */
+    height: auto;          /* Mantém a proporção da imagem */
+}
+/* Banner de fundo */
+.banner {
+    width: 100%;               /* O banner ocupará 100% da largura da página */
+    max-height: 400px;          /* Limita a altura do banner para não ocupar muito espaço */
+    object-fit: cover;          /* Garante que a imagem seja cortada corretamente, mantendo a proporção */
+    display: block;
+    margin: 0 auto;             /* Centraliza o banner */
+    position: relative;         /* Garante que o banner esteja no fluxo correto da página */
+    z-index: 1;                 /* Certifica que o banner ficará atrás do menu */
+}
+
+/* Garante que o header fique acima do banner */
+header {
+    position: relative;
+    z-index: 2;                 /* O header fica acima de qualquer outro conteúdo, incluindo o banner */
+}
+
+/* Estilos para garantir o menu por cima */
+nav {
+    position: relative;
+    z-index: 3;                 /* O menu estará sobre o banner */
+    background-color: rgba(51, 51, 51, 0.9);  /* Fundo semi-transparente */
+}
+
+/* Responsividade para o banner em telas menores */
+@media (max-width: 768px) {
+    .banner {
+        max-height: 200px;      /* Reduz o tamanho do banner em telas menores */
+    }
+}
+
+/* Seção principal com a imagem de fundo */
+.main-banner {
+    background-image: url('../imagens/banner.jpg');  /* Caminho da imagem */
+    background-size: cover;                          /* Faz com que a imagem cubra toda a área */
+    background-position: center;                     /* Centraliza a imagem */
+    background-repeat: no-repeat;                    /* Evita que a imagem se repita */
+    width: 100%;                                     /* Ocupa 100% da largura */
+    height: 400px;                                   /* Altura do banner, ajuste conforme necessário */
+    position: relative;                              /* Garante que o conteúdo fique sobre o banner */
+    display: flex;                                   /* Flexbox para alinhar conteúdo dentro do banner */
+    align-items: center;                             /* Centraliza verticalmente o conteúdo */
+    justify-content: center;                         /* Centraliza horizontalmente o conteúdo */
+    z-index: 1;                                      /* Fica atrás de outros elementos */
+}
+
+.main-banner h1 {
+    color: white;                                    /* Texto claro sobre o banner */
+    font-size: 3rem;                                 /* Tamanho do texto */
+    text-align: center;                              /* Centraliza o texto */
+    z-index: 2;                                      /* O texto está acima do background */
+}
+
+header {
+    position: relative;
+    z-index: 3;                                      /* Mantém o menu acima do banner */
+    background-color: rgba(0, 0, 0, 0.7);            /* Fundo semitransparente para destacar o menu */
+}
+
+nav {
+    position: relative;
+    z-index: 4;
+}
+
+@media (max-width: 768px) {
+    .main-banner {
+        height: 200px;                               /* Reduz a altura do banner em telas menores */
+    }
+    .main-banner h1 {
+        font-size: 2rem;                             /* Ajusta o tamanho do texto em telas menores */
     }
 }
