@@ -226,29 +226,29 @@ nav {
     z-index: 1;                                      /* Fica atrás de outros elementos */
 }
 
-.main-banner h1 {
-    color: white;                                    /* Texto claro sobre o banner */
-    font-size: 3rem;                                 /* Tamanho do texto */
-    text-align: center;                              /* Centraliza o texto */
-    z-index: 2;                                      /* O texto está acima do background */
-}
-
-header {
-    position: relative;
-    z-index: 3;                                      /* Mantém o menu acima do banner */
-    background-color: rgba(0, 0, 0, 0.7);            /* Fundo semitransparente para destacar o menu */
-}
-
-nav {
-    position: relative;
-    z-index: 4;
-}
-
 @media (max-width: 768px) {
     .main-banner {
-        height: 200px;                               /* Reduz a altura do banner em telas menores */
+        height: 250px;                              /* Reduz a altura do banner em telas menores */
     }
+
     .main-banner h1 {
-        font-size: 2rem;                             /* Ajusta o tamanho do texto em telas menores */
+        font-size: 2rem;                             /* Reduz o tamanho do texto em telas menores */
     }
+}
+
+@media (max-width: 480px) {
+    .main-banner {
+        height: 200px;                              /* Ajusta ainda mais a altura para dispositivos menores */
+    }
+
+    .main-banner h1 {
+        font-size: 1.5rem;                          /* Reduz o tamanho do texto em telas muito pequenas */
+    }
+}
+* Seção de conteúdo */
+.content {
+    position: relative; /* Permite que o z-index funcione corretamente */
+    z-index: 3; /* Garante que o conteúdo principal esteja acima do banner */
+    text-align: center; /* Centraliza o texto do conteúdo */
+    padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
 }
