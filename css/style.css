@@ -245,10 +245,3 @@ nav {
         font-size: 1.5rem;                          /* Reduz o tamanho do texto em telas muito pequenas */
     }
 }
-* Seção de conteúdo */
-.content {
-    position: relative; /* Permite que o z-index funcione corretamente */
-    z-index: 3; /* Garante que o conteúdo principal esteja acima do banner */
-    text-align: center; /* Centraliza o texto do conteúdo */
-    padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
-}
