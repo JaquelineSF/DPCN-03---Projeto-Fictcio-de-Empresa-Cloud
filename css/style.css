@@ -27,20 +27,6 @@ nav ul li a {
     text-decoration: none;
 }
 
-.banner {
-    position: relative;
-    background: url('../assets/images/banner.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-text {
-    color: white;
-    text-align: center;
-}
-
 .services, .about, .contact {
     padding: 50px 20px;
     text-align: center;
@@ -180,16 +166,7 @@ img {
     display: block;        /* Centraliza a imagem dentro do container */
     height: auto;          /* Mantém a proporção da imagem */
 }
-/* Banner de fundo */
-.banner {
-    width: 100%;               /* O banner ocupará 100% da largura da página */
-    max-height: 400px;          /* Limita a altura do banner para não ocupar muito espaço */
-    object-fit: cover;          /* Garante que a imagem seja cortada corretamente, mantendo a proporção */
-    display: block;
-    margin: 0 auto;             /* Centraliza o banner */
-    position: relative;         /* Garante que o banner esteja no fluxo correto da página */
-    z-index: 1;                 /* Certifica que o banner ficará atrás do menu */
-}
+
 
 /* Garante que o header fique acima do banner */
 header {
@@ -204,44 +181,122 @@ nav {
     background-color: rgba(51, 51, 51, 0.9);  /* Fundo semi-transparente */
 }
 
-/* Responsividade para o banner em telas menores */
+
+/* Estilo padrão do hambúrguer (apenas visível em telas menores) */
+.hamburger {
+    display: none;               /* Não mostra o ícone no desktop */
+    font-size: 24px;             /* Tamanho do ícone */
+    cursor: pointer;             /* Cursor de mão ao passar o mouse */
+}
+
+/* Estilo padrão do menu de navegação */
+.menu {
+    display: flex;               /* Exibe os itens do menu na horizontal */
+    list-style: none;            /* Remove os marcadores da lista */
+}
+
+/* Estilo para o menu quando ele está ativo (aparece ao clicar no hambúrguer) */
+.menu.active {
+    display: block;              /* Mostra o menu completo quando ativo */
+}
+
+/* Estilos específicos para telas menores (responsividade) */
+@media (max-width: 768px) {
+    /* Mostra o ícone de hambúrguer */
+    .hamburger {
+        display: block;          /* Exibe o ícone de hambúrguer em telas menores */
+    }
+
+    /* Oculta o menu por padrão e o exibe em coluna */
+    .menu {
+        display: none;           /* Oculta o menu inicialmente */
+        flex-direction: column;  /* Exibe itens do menu em coluna quando ativo */
+        gap: 15px;               /* Espaçamento entre os itens */
+    }
+}
+/* Espaçamento entre seções */
+.services {
+    padding: 50px 20px;
+    background-color: #f8f9fa; /* Cor de fundo para destacar */
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.service {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Ajuste de responsividade para as seções de serviço */
+@media (min-width: 768px) {
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+    }
+}
+.banner-text {
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para contraste */
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .banner {
-        max-height: 200px;      /* Reduz o tamanho do banner em telas menores */
-    }
-}
-
-/* Seção principal com a imagem de fundo */
-.main-banner {
-    background-image: url('../imagens/banner.jpg');  /* Caminho da imagem */
-    background-size: cover;                          /* Faz com que a imagem cubra toda a área */
-    background-position: center;                     /* Centraliza a imagem */
-    background-repeat: no-repeat;                    /* Evita que a imagem se repita */
-    width: 100%;                                     /* Ocupa 100% da largura */
-    height: 400px;                                   /* Altura do banner, ajuste conforme necessário */
-    position: relative;                              /* Garante que o conteúdo fique sobre o banner */
-    display: flex;                                   /* Flexbox para alinhar conteúdo dentro do banner */
-    align-items: center;                             /* Centraliza verticalmente o conteúdo */
-    justify-content: center;                         /* Centraliza horizontalmente o conteúdo */
-    z-index: 1;                                      /* Fica atrás de outros elementos */
-}
-
-@media (max-width: 768px) {
-    .main-banner {
-        height: 250px;                              /* Reduz a altura do banner em telas menores */
+        height: 250px;
     }
 
-    .main-banner h1 {
-        font-size: 2rem;                             /* Reduz o tamanho do texto em telas menores */
+    .banner-text h1 {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .main-banner {
-        height: 200px;                              /* Ajusta ainda mais a altura para dispositivos menores */
+    .banner {
+        height: 200px;
     }
 
-    .main-banner h1 {
-        font-size: 1.5rem;                          /* Reduz o tamanho do texto em telas muito pequenas */
+    .banner-text h1 {
+        font-size: 1.5rem;
     }
 }
